@@ -1,0 +1,245 @@
+@charset "UTF-8";
+/* 360为效果图分辨率 */
+/* 效果图应对那种高清屏设计 */
+/* 效果px转换为适应rem */
+/* 手机高清屏获取不同像素图片 */
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #bec0c2;
+  font-size: 0.41667rem; }
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #bec0c2;
+  font-size: 0.41667rem; }
+
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #bec0c2;
+  font-size: 0.41667rem; }
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-size: 0.41667rem;
+  color: #bec0c2; }
+
+/*滚动条样式*/
+::-webkit-scrollbar {
+  width: 0.18519rem;
+  height: 0.0463rem; }
+
+::-webkit-scrollbar-track {
+  display: block; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #d7d9db;
+  border-radius: 10px; }
+
+/*遮盖层样式*/
+#mask {
+  width: 100%;
+  min-height: 100%;
+  background-color: #000000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  opacity: 0.5;
+  /*兼容IE8及以下版本浏览器*/
+  filter: alpha(opacity=50);
+  /*display: none;*/ }
+
+/*请稍后样式*/
+#wait {
+  width: 3.38889rem;
+  height: 2.7963rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: -1.68519rem;
+  margin-top: -3.88889rem;
+  display: none; }
+  #wait .loading {
+    width: 0.87037rem;
+    height: 0.88889rem;
+    display: block;
+    margin: 0.48148rem auto 0.27778rem; }
+  #wait h2 {
+    color: #FFFFFF;
+    font-size: 0.48148rem;
+    text-align: center;
+    font-weight: normal; }
+
+html {
+  width: 100%;
+  height: 100%; }
+
+body {
+  width: 100%;
+  height: 100%; }
+
+.wrap {
+  width: 100%;
+  height: 17.77778rem;
+  position: relative;
+  background-color: #FFFFFF;
+  /*注册页面*/ }
+  .wrap .content {
+    width: 8.51852rem;
+    margin: 0 auto;
+    overflow: hidden;
+    /*footer*/ }
+    .wrap .content .content_title {
+      width: 2.25926rem;
+      height: 3.16667rem;
+      background-image: url(../Images/1x/logo.png);
+      background-image: -webkit-image-set(url(../Images/1x/logo.png) 1x, url(../Images/2x/logo.png) 2x, url(../Images/3x/logo.png) 3x, url(../Images/3x/logo.png) 4x);
+      background-image: image-set(url(../Images/1x/logo.png) 1x, url(../Images/1x/logo.png) 2x, url(../Images/3x/logo.png) 3x, url(../Images/3x/logo.png) 4x);
+      background-repeat: no-repeat;
+      background-size: contain;
+      margin: 0.88889rem auto 0.98148rem; }
+    .wrap .content .content_item_number {
+      position: relative;
+      width: 100%; }
+      .wrap .content .content_item_number .item_iphone {
+        position: absolute;
+        top: 0.18519rem;
+        left: 0.09259rem;
+        background-image: url(../Images/1x/iphone.png);
+        background-image: -webkit-image-set(url(../Images/1x/iphone.png) 1x, url(../Images/2x/iphone.png) 2x, url(../Images/3x/iphone.png) 3x, url(../Images/3x/iphone.png) 4x);
+        background-image: image-set(url(../Images/1x/iphone.png) 1x, url(../Images/1x/iphone.png) 2x, url(../Images/3x/iphone.png) 3x, url(../Images/3x/iphone.png) 4x);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 0.38889rem;
+        height: 0.46296rem;
+        z-index: 200;
+        background-size: 100% 100%; }
+      .wrap .content .content_item_number input {
+        height: 0.92593rem;
+        width: 100%;
+        color: #333333;
+        border: none;
+        border-bottom: 2px solid #e9e8e8;
+        outline: none;
+        font-size: 0.5rem;
+        text-align: left;
+        padding-left: 0.83333rem;
+        margin-bottom: 0.46296rem;
+        z-index: 0; }
+    .wrap .content .content_item_check {
+      position: relative;
+      width: 100%;
+      /*信息提醒*/ }
+      .wrap .content .content_item_check .item_checktest {
+        position: absolute;
+        top: 0.18519rem;
+        left: 0.09259rem;
+        background-image: url(../Images/1x/check.png);
+        background-image: -webkit-image-set(url(../Images/1x/check.png) 1x, url(../Images/2x/check.png) 2x, url(../Images/3x/check.png) 3x, url(../Images/3x/check.png) 4x);
+        background-image: image-set(url(../Images/1x/check.png) 1x, url(../Images/1x/check.png) 2x, url(../Images/3x/check.png) 3x, url(../Images/3x/check.png) 4x);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 0.46296rem;
+        height: 0.38889rem;
+        z-index: 200;
+        background-size: 100% 100%; }
+      .wrap .content .content_item_check input {
+        height: 0.92593rem;
+        width: 100%;
+        color: #333333;
+        border: none;
+        border-bottom: 2px solid #e9e8e8;
+        outline: none;
+        font-size: 0.5rem;
+        text-align: left;
+        padding-left: 0.83333rem;
+        margin-bottom: 0.18519rem;
+        z-index: 0; }
+      .wrap .content .content_item_check .btn1 {
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #0f8bff;
+        color: #FFFFFF;
+        font-size: 0.33333rem;
+        width: 2.74074rem;
+        height: 0.7963rem;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        text-align: center;
+        line-height: 0.7963rem; }
+      .wrap .content .content_item_check .content_tip {
+        position: absolute;
+        top: 1.11111rem;
+        right: 0;
+        text-align: right; }
+        .wrap .content .content_item_check .content_tip #tip {
+          font-size: 0.33333rem;
+          color: #fa622e; }
+    .wrap .content .item {
+      margin-top: 1.37037rem;
+      text-align: center; }
+      .wrap .content .item button {
+        width: 100%;
+        height: 1.27778rem;
+        background-color: #0f8bff;
+        border: none;
+        border-radius: 10px;
+        font-size: 0.58333rem;
+        color: #fff;
+        outline: none; }
+      .wrap .content .item .p1 {
+        margin-top: 0.37037rem;
+        font-size: 0.42593rem;
+        color: #0f8bff; }
+    .wrap .content .footer {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: 0.37037rem; }
+      .wrap .content .footer .p2 {
+        width: 8.51852rem;
+        margin: 0 auto;
+        font-size: 0.33333rem;
+        color: #b5b5b6; }
+
+.wrap_bind {
+  width: 100%;
+  height: 100%;
+  /*手机绑定页面*/ }
+  .wrap_bind .content_bind {
+    width: 8.51852rem;
+    margin: 0 auto;
+    overflow: hidden; }
+    .wrap_bind .content_bind .contetn_success {
+      width: 3.5rem;
+      height: 4.09259rem;
+      background-image: url(../Images/1x/iphone_bg.png);
+      background-image: -webkit-image-set(url(../Images/1x/iphone_bg.png) 1x, url(../Images/2x/iphone_bg.png) 2x, url(../Images/3x/iphone_bg.png) 3x, url(../Images/3x/iphone_bg.png) 4x);
+      background-image: image-set(url(../Images/1x/iphone_bg.png) 1x, url(../Images/1x/iphone_bg.png) 2x, url(../Images/3x/iphone_bg.png) 3x, url(../Images/3x/iphone_bg.png) 4x);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-size: 100% 100%;
+      margin: 1.25rem auto 0.62963rem; }
+    .wrap_bind .content_bind .contetn_success_title {
+      color: #0f8bff;
+      font-size: 0.63889rem;
+      text-align: center; }
+    .wrap_bind .content_bind .contetn_success_app {
+      margin-top: 0.33333rem;
+      text-align: center;
+      color: #999999;
+      font-size: 0.38889rem; }
+    .wrap_bind .content_bind .content_close {
+      margin-top: 1.48148rem;
+      width: 100%;
+      height: 1.2963rem;
+      background-color: #0f8bff;
+      color: #FFFFFF;
+      font-size: 0.55556rem;
+      outline: none;
+      border: none;
+      border-radius: 5px; }

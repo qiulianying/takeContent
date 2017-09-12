@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>申请页面</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no"><!--忽略将页面中的数字识别为电话号码，忽略android平台对邮箱地址的识别-->
+    <meta name="apple-touch-fullscreen" content="yes"><!--这个应该是支持touch事件-->
+    <meta name="apple-mobile-web-app-capable" content="yes"><!--当网站添加到主屏幕快速启动方式，可隐藏地址栏，仅针对ios的safari-->
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <!-- 禁止百度转码 -->
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link rel="stylesheet" type="text/css" href="styles/index.css">
+    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="script/autoScreen.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="content">
+            <!--标题title-->
+            <div class="content_title"></div>
+
+            <!--填写内容-->
+            <div class="content_item_number" id="first_item">
+                <div class="item_iphone"></div>
+                <input type="tel" id="phone" name="phone" class="item-text" placeholder="请输入手机号码" autocomplete="off" tip="请输入帐号" maxlength="11">
+            </div>
+            <div class="content_item_check">
+                <div class="item_checktest"></div>
+                <input type="tel" id="check" name="check" class="item-text" tip="长度为6-16个字符" maxlength="6" placeholder="请输入短信验证码">
+                <a class="btn1" value="获取验证码" id="btn1">获取验证码</a>
+
+                <!--信息提醒-->
+                <div class="content_tip">
+                    <p id="tip" style="display: none"></p>
+                </div>
+            </div>
+
+            <div class="item">
+                <button value="点击领取" id="item3">点击领取</button>
+                <p class="p1">请在各大APP市场搜索下载“畅读书城”</p>
+            </div>
+            <!--底部元素-->
+            <div class="footer">
+                <p class="p2">友情提示：为了保证账号能够正常同步，书城用户请先在客户端内完成手机绑定！</p>
+            </div>
+        </div>
+    </div>
+    
+    <!--提示等待-->
+    <div class="wait" id="wait">
+        <img src="images/icon/loading.gif" alt="" class="loading"/>
+        <h2>请稍等</h2>
+    </div>
+
+    <script type="text/javascript">
+        $(function () {
+            function GetRequest() {
+                var url = location.search; //获取url中"?"符后的字串
+                var theRequest = new Object();
+                if (url.indexOf("?") != -1) {
+                    var str = url.substr(1);
+                    strs = str.split("&");
+                    for (var i = 0; i < strs.length; i++) {
+                        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+                    }
+                }
+                return theRequest;
+            }
+
+            /*判断下载终端*/
+            var u = navigator.userAgent;
+            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+            if(isiOS==true){
+                //$("#download").attr("href","https://lnk0.com/os48Eh");
+            }else if(isAndroid==true){
+                //$("#download").attr("href","http://download.andreader.com/download/changdu/Changdu_QQkaquan.apk");
+            }
+
+
+            $("#item3").on("click", function () {
+                var phone = $("#phone").val();
+                var check = $("#check").val();
+                var reg = /^1[34578]\d{9}$/;
+                var reg1 = /^\d*$/;
+                if (phone.trim() == "") {
+                    $('#tip').text('请输入手机号码').show()
+                } else if (reg.test(phone) == false) {
+                    $('#tip').text("请输入手机号码正确格式").show();
+                } else if (check == "") {
+                    $('#tip').text('请输入获取验证').show();
+                } else if (reg1.test(check) == false) {
+                    $('#tip').text('请输入获取验证正确格式').show();
+                } else {
+                    var request = GetRequest();
+                    var card_id = request["card_id"];
+                    var card_code = request["code"];
+
+                    //如果获取的验证码正确
+
+                    $("#wait").show();          //提示等待
+
+                    window.location.href="index_success.html";       //跳转其他页面
+
+                }
+            });
+            /*获取验证码检测*/
+            $("#btn1").on("click", function () {
+                var phone = $("#phone").val();
+                var check = $("#check").val();
+                var reg = /^1[34578]\d{9}$/;
+                if (phone.trim() == "") {
+                    $('#tip').text('请输入手机号码').show();
+                } else if (reg.test(phone) == false) {
+                    $('#tip').text("请输入手机号码正确格式").show();
+                } else {
+                    /*正确的情况下更改按钮字体和样式*/
+                    $(this).css({
+                        "backgroundColor":"#bfbfbf"
+                    });
+
+                    //调用秒数
+                    settime();
+
+                    $('#tip').hide();
+                }
+            });
+
+            var countdown = 30;
+            var myInterval;
+            var btn_time = $("#btn1");
+            function settime() {
+                if (countdown == 0) {
+                    clearInterval(myInterval);
+                    btn_time.removeAttr("disabled");
+                    btn_time.text("获取验证码");
+                    btn_time.css({
+                        "backgroundColor":"#0f8bff"
+                    });
+
+                    countdown = 30;
+                } else {
+                    btn_time.attr("disabled", "disabled");
+                    btn_time.text("重新发送(" + countdown + ")");
+                    countdown--;
+                    myInterval = setTimeout(function(){
+                        settime();
+                    },1000)
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+@charset "utf-8";
+
+/* 360为效果图分辨率 */
+
+$pageWdith:360/10;
+
+/* 效果图应对那种高清屏设计 */
+
+$devicePixelRatio:3;
+
+/* 效果px转换为适应rem */
+
+@function rem($px) {
+    @return $px/$pageWdith/$devicePixelRatio*1rem;
+}
+
+/* 手机高清屏获取不同像素图片 */
+
+@mixin backgroundSet($picName, $picType:jpg) {
+    background-image: url(../Images/1x/#{$picName}.#{$picType});
+    background-image: -webkit-image-set(url(../Images/1x/#{$picName}.#{$picType}) 1x, url(../Images/2x/#{$picName}.#{$picType}) 2x, url(../Images/3x/#{$picName}.#{$picType}) 3x, url(../Images/3x/#{$picName}.#{$picType}) 4x);
+    background-image: image-set(url(../Images/1x/#{$picName}.#{$picType}) 1x, url(../Images/1x/#{$picName}.#{$picType}) 2x, url(../Images/3x/#{$picName}.#{$picType}) 3x, url(../Images/3x/#{$picName}.#{$picType}) 4x);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color: #bec0c2;
+  font-size: rem(45);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color: #bec0c2;
+  font-size: rem(45);
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color: #bec0c2;
+  font-size: rem(45);
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  font-size: rem(45);
+  color: #bec0c2;
+}
+
+/*滚动条样式*/
+::-webkit-scrollbar {
+    width: rem(20);
+    height: rem(5);
+}
+::-webkit-scrollbar-track {
+    display: block;
+}
+::-webkit-scrollbar-thumb
+{
+    background-color: #d7d9db;
+    border-radius: 10px;
+}
+
+
+
+/*遮盖层样式*/
+#mask {
+    width: 100%;
+    min-height: 100%;
+    background-color:#000000;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:50;
+    opacity:0.5;
+    /*兼容IE8及以下版本浏览器*/
+    filter: alpha(opacity=50);
+    /*display: none;*/
+}
+
+/*请稍后样式*/
+#wait {
+  width: rem(366);
+  height: rem(302);
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 8px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-left: rem(-182);
+  margin-top: rem(-420);
+  display: none;
+
+  .loading {
+    width: rem(94);
+    height: rem(96);
+    display: block;
+    margin: rem(52) auto rem(30);
+  }
+  h2 {
+    color: #FFFFFF;
+    font-size: rem(52);
+    text-align: center;
+    font-weight: normal;
+  }
+}
+
+
+
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    width: 100%;
+    height: 100%;
+}
+.wrap {
+  width: 100%;
+  height: rem(1920);
+  position: relative;
+  background-color: #FFFFFF;
+
+  /*注册页面*/
+  .content {
+      width: rem(920);
+      margin: 0 auto;
+      overflow: hidden;
+
+      .content_title {
+        width: rem(244);
+        height: rem(342);
+        @include backgroundSet(logo,png);
+        margin: rem(96) auto rem(106);
+      }
+
+      .content_item_number {
+        position: relative;
+        width: 100%;
+
+        .item_iphone {
+          position: absolute;
+          top: rem(20);
+          left: rem(10);
+          @include backgroundSet(iphone,png);
+          width: rem(42);
+          height: rem(50);
+          z-index: 200;
+          background-size: 100% 100%;
+        }
+
+        input {
+          height: rem(100);
+          width: 100%;
+          color: #333333;
+          border: none;
+          border-bottom: 2px solid #e9e8e8;
+          outline: none;
+          font-size: rem(54);
+          text-align: left;
+          padding-left: rem(90);
+          margin-bottom: rem(50);
+          z-index: 0;
+        }
+      }
+
+      .content_item_check {
+        position: relative;
+        width: 100%;
+
+        .item_checktest {
+          position: absolute;
+          top: rem(20);
+          left: rem(10);
+          @include backgroundSet(check,png);
+          width: rem(50);
+          height: rem(42);
+          z-index: 200;
+          background-size: 100% 100%;
+        }
+
+        input {
+          height: rem(100);
+          width: 100%;
+          color: #333333;
+          border: none;
+          border-bottom: 2px solid #e9e8e8;
+          outline: none;
+          font-size: rem(54);
+          text-align: left;
+          padding-left: rem(90);
+          margin-bottom: rem(20);
+          z-index: 0;
+        }
+
+        .btn1 {
+          position: absolute;
+          top: 0;
+          right: 0;
+          background-color: #0f8bff;
+          color: #FFFFFF;
+          font-size: rem(36);
+          width: rem(296);
+          height: rem(86);
+          border: none;
+          border-radius: 5px;
+          outline: none;
+          text-align: center;
+          line-height: rem(86);
+        }
+
+        /*信息提醒*/
+        .content_tip {
+          position: absolute;
+          top: rem(120);
+          right: 0;
+          text-align: right;
+          #tip {
+            font-size: rem(36);
+            color: #fa622e;
+          }
+        }
+
+      }
+
+    .item {
+        margin-top: rem(148);
+        text-align: center;
+        button {
+          width: 100%;
+          height: rem(138);
+          background-color: #0f8bff;
+          border: none;
+          border-radius: 10px;
+          font-size: rem(63);
+          color: #fff;
+          outline: none;
+        }
+        .p1 {
+          margin-top: rem(40);
+          font-size: rem(46);
+          color: #0f8bff;
+        }
+      }
+
+    /*footer*/
+    .footer {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      bottom: rem(40);
+      .p2 {
+        width: rem(920);
+        margin: 0 auto;
+        font-size: rem(36);
+        color: #b5b5b6;
+      }
+    }
+    }
+}
+
+
+.wrap_bind {
+  width: 100%;
+  height: 100%;
+  /*手机绑定页面*/
+  .content_bind {
+    width: rem(920);
+    margin: 0 auto;
+    overflow: hidden;
+
+    .contetn_success {
+      width: rem(378);
+      height: rem(442);
+      @include backgroundSet(iphone_bg,png);
+      background-size: 100% 100%;
+      margin: rem(135) auto rem(68);
+    }
+    .contetn_success_title {
+      color: #0f8bff;
+      font-size: rem(69);
+      text-align: center;
+    }
+    .contetn_success_app {
+      margin-top: rem(36);
+      text-align: center;
+      color: #999999;
+      font-size: rem(42);
+    }
+
+    .content_close {
+      margin-top: rem(160);
+      width: 100%;
+      height: rem(140);
+      background-color: #0f8bff;
+      color: #FFFFFF;
+      font-size: rem(60);
+      outline: none;
+      border: none;
+      border-radius: 5px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
