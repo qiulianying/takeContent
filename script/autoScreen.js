@@ -14,7 +14,7 @@ var browser = {
 };
 
 function insertStyle() {
-    var //定义屏幕高清度 
+    var //定义屏幕高清度
     dpr = 1,
 
     //定义缩放比例
@@ -43,7 +43,7 @@ function insertStyle() {
     } else {
         //是=获取屏幕宽度
         clientW = (document.documentElement.clientWidth>0)?document.documentElement.clientWidth: window.screen.width;
-    }  
+    }
 
     // 设置viewport，进行缩放，达到高清效果
     metaEl.setAttribute('content', 'width=' + scale * clientW + ',initial-scale=' + scale + ',maximum-scale=' + scale + ', minimum-scale=' + scale + ',user-scalable=no');

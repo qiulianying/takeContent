@@ -1,8 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
-    <title>申请页面</title>
+    <title>畅玩一“夏”赢大奖</title>
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
     <meta name="format-detection" content="telephone=no,email=no"><!--忽略将页面中的数字识别为电话号码，忽略android平台对邮箱地址的识别-->
     <meta name="apple-touch-fullscreen" content="yes"><!--这个应该是支持touch事件-->
@@ -11,148 +12,455 @@
     <!-- 禁止百度转码 -->
     <meta http-equiv="Cache-Control" content="no-siteapp">
     <link rel="stylesheet" type="text/css" href="styles/reset.css">
-    <link rel="stylesheet" type="text/css" href="styles/index.css">
-    <script type="text/javascript" src="lib/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="script/autoScreen.js"></script>
+    <link rel="stylesheet" href="styles/index.css"/>
+    <!--引入字幕滚动css-->
+    <link rel="stylesheet" href="styles/liMarquee.css"/>
+    <script type="text/javascript" src="script/autoScreen.js?20173522344"></script>
+    <script type="text/javascript" src="lib/jquery-2.1.1.min.js"></script>
+    <!--引入字幕滚动插件-->
+    <script type="text/javascript" src="script/jquery.liMarquee.js"></script>
 </head>
 
 <body>
-    <div class="wrap">
-        <div class="content">
-            <!--标题title-->
-            <div class="content_title"></div>
-
-            <!--填写内容-->
-            <div class="content_item_number" id="first_item">
-                <div class="item_iphone"></div>
-                <input type="tel" id="phone" name="phone" class="item-text" placeholder="请输入手机号码" autocomplete="off" tip="请输入帐号" maxlength="11">
-            </div>
-            <div class="content_item_check">
-                <div class="item_checktest"></div>
-                <input type="tel" id="check" name="check" class="item-text" tip="长度为6-16个字符" maxlength="6" placeholder="请输入短信验证码">
-                <a class="btn1" value="获取验证码" id="btn1">获取验证码</a>
-
-                <!--信息提醒-->
-                <div class="content_tip">
-                    <p id="tip" style="display: none"></p>
+<div class="wrap">
+    <div class="warp_header">
+        <a href="javascript:;" class="take_left" id="game_center"
+           onclick="_hmt.push(['_trackEvent', 'btn', '', '游戏中心']);">游戏中心</a>
+        <a href="javascript:;" class="take_right" id="game_share"
+           onclick="_hmt.push(['_trackEvent', 'btn', '分享', '游戏中心6月推广活动分享']);">分享</a>
+        <div class="warp_header_news">
+            <div id="title_moocBox" style="overflow:hidden">
+                <div class="dowebok" id="title_con1">
                 </div>
-            </div>
-
-            <div class="item">
-                <button value="点击领取" id="item3">点击领取</button>
-                <p class="p1">请在各大APP市场搜索下载“畅读书城”</p>
-            </div>
-            <!--底部元素-->
-            <div class="footer">
-                <p class="p2">友情提示：为了保证账号能够正常同步，书城用户请先在客户端内完成手机绑定！</p>
             </div>
         </div>
     </div>
-    
-    <!--提示等待-->
-    <div class="wait" id="wait">
-        <img src="images/icon/loading.gif" alt="" class="loading"/>
-        <h2>请稍等</h2>
+
+    <!--页面小背景-->
+    <div class="blue_bg"></div>
+    <div class="red_bg"></div>
+
+    <!--内容1-->
+    <div class="warp_content_all" id="warp_content_first">
+        <div class="warp_content_1">
+            <div class="warp_title_all_1">
+                <div class="warp_content_1_title"></div>
+                <div class="warp_title_icon_1"></div>
+                <p>连续登录就送礼</p>
+
+                <p>超值优惠券轻松拿</p>
+            </div>
+
+            <div class="warp_content_1_content">
+                <p class="warp_content_1_know">
+                    活动期间连续3天登录以下任意一款游戏，获得120阅币充值优惠券；连续登录6天获得1000阅币充值优惠券；连续登录不同款游戏无效。
+                </p>
+
+                <p class="warp_import"><img src="images/game/icon/money.png" alt=""/>（提示：点击游戏名称即可进入游戏哦~）</p>
+
+                <ul class="warp_start_game" id="warp_start_game">
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://d.hgame.com/hdpt/androidread/appid/100814/gameid/100220,1996,传奇世界,http://bcdn.andreader.com/Images/353a6bce-3fce-a580-8f7a-f9408bf22f48/software.png?v=18:45:17GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/1bb73b60-e75b-1bf3-f023-9b00706a996b/software.png?v=下午3:57:51)');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/cqi.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://d.hgame.com/hdpt/androidread/appid/100814/gameid/100220,1996,传奇世界,http://bcdn.andreader.com/Images/353a6bce-3fce-a580-8f7a-f9408bf22f48/software.png?v=18:45:17GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/1bb73b60-e75b-1bf3-f023-9b00706a996b/software.png?v=下午3:57:51)');" class="game_name"><p>传奇世界</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://d.hgame.com/hdpt/androidread/appid/100814/gameid/100220,1996,传奇世界,http://bcdn.andreader.com/Images/353a6bce-3fce-a580-8f7a-f9408bf22f48/software.png?v=18:45:17GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/1bb73b60-e75b-1bf3-f023-9b00706a996b/software.png?v=下午3:57:51)');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/dfh3.html,27996,大富豪3,http://bcdn.andreader.com/Images/eb957931-2540-cc0b-0638-3289ddb6c6c6/software.png?v=17:39:03GMT+0800(中国标准时间),http://b.image.andreader.com/Images/10584cb3-9998-7af6-956c-048b6afa5fc4/software.png?v=14:06:44GMT+0800(中国标准时间))');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/fuhao.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/dfh3.html,27996,大富豪3,http://bcdn.andreader.com/Images/eb957931-2540-cc0b-0638-3289ddb6c6c6/software.png?v=17:39:03GMT+0800(中国标准时间),http://b.image.andreader.com/Images/10584cb3-9998-7af6-956c-048b6afa5fc4/software.png?v=14:06:44GMT+0800(中国标准时间))');" class="game_name"><p>大富豪3</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/dfh3.html,27996,大富豪3,http://bcdn.andreader.com/Images/eb957931-2540-cc0b-0638-3289ddb6c6c6/software.png?v=17:39:03GMT+0800(中国标准时间),http://b.image.andreader.com/Images/10584cb3-9998-7af6-956c-048b6afa5fc4/software.png?v=14:06:44GMT+0800(中国标准时间))');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://passa.gz.1251010508.clb.myqcloud.com/pass_a/jdk/play/2000034,7996,决战沙城,http://bcdn.andreader.com/Images/c82198b7-8db0-fa1b-b649-009a5170650d/software.png?v=17:17:35GMT+0800(中国标准时间),http://b.image.andreader.com/Images/18261ecd-8d65-0622-0050-40ab804d944a/software.png?v=上午10:08:41)');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/sac.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://passa.gz.1251010508.clb.myqcloud.com/pass_a/jdk/play/2000034,7996,决战沙城,http://bcdn.andreader.com/Images/c82198b7-8db0-fa1b-b649-009a5170650d/software.png?v=17:17:35GMT+0800(中国标准时间),http://b.image.andreader.com/Images/18261ecd-8d65-0622-0050-40ab804d944a/software.png?v=上午10:08:41)');" class="game_name"><p>决战沙城</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://passa.gz.1251010508.clb.myqcloud.com/pass_a/jdk/play/2000034,7996,决战沙城,http://bcdn.andreader.com/Images/c82198b7-8db0-fa1b-b649-009a5170650d/software.png?v=17:17:35GMT+0800(中国标准时间),http://b.image.andreader.com/Images/18261ecd-8d65-0622-0050-40ab804d944a/software.png?v=上午10:08:41)');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/jssgwy.html,17996,绝世神功,http://bcdn.andreader.com/Images/48c9190b-f4ba-7c7c-0a34-2786b947084c/software.png?v=17:17:07GMT+0800(中国标准时间),http://b.image.andreader.com/Images/81cf71bd-a5f2-c6a8-a2f8-76e333a6536b/software.png?v=16:48:40GMT+0800(中国标准时间))');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/shengong.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/jssgwy.html,17996,绝世神功,http://bcdn.andreader.com/Images/48c9190b-f4ba-7c7c-0a34-2786b947084c/software.png?v=17:17:07GMT+0800(中国标准时间),http://b.image.andreader.com/Images/81cf71bd-a5f2-c6a8-a2f8-76e333a6536b/software.png?v=16:48:40GMT+0800(中国标准时间))');" class="game_name"><p>绝世神功</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/jssgwy.html,17996,绝世神功,http://bcdn.andreader.com/Images/48c9190b-f4ba-7c7c-0a34-2786b947084c/software.png?v=17:17:07GMT+0800(中国标准时间),http://b.image.andreader.com/Images/81cf71bd-a5f2-c6a8-a2f8-76e333a6536b/software.png?v=16:48:40GMT+0800(中国标准时间))');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://api.egret-labs.org/v2/game/22182/91284,54996,三生三世十里桃花,http://bcdn.andreader.com/Images/8b6c259f-dfd8-0fc1-f1db-006b5eb5718c/software.png?v=11:36:23GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/7356cbab-fdbe-0a18-4879-03a4c873a55b/software.png?v=11:36:31GMT+0800(中国标准时间))');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/taohua.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://api.egret-labs.org/v2/game/22182/91284,54996,三生三世十里桃花,http://bcdn.andreader.com/Images/8b6c259f-dfd8-0fc1-f1db-006b5eb5718c/software.png?v=11:36:23GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/7356cbab-fdbe-0a18-4879-03a4c873a55b/software.png?v=11:36:31GMT+0800(中国标准时间))');" class="game_name"><p>三生三世</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://api.egret-labs.org/v2/game/22182/91284,54996,三生三世十里桃花,http://bcdn.andreader.com/Images/8b6c259f-dfd8-0fc1-f1db-006b5eb5718c/software.png?v=11:36:23GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/7356cbab-fdbe-0a18-4879-03a4c873a55b/software.png?v=11:36:31GMT+0800(中国标准时间))');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://zoo.qincaigame.com/game/104/148/,34996,我是大将军,http://bcdn.andreader.com/Images/f415823f-b9f8-557e-ff0c-0f19d7295715/software.png?v=18:18:48GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/ee057092-6495-0e5b-996f-74bd2cfc5c64/software.png?v=16:19:28GMT+0800(中国标准时间))');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/jiangjun.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://zoo.qincaigame.com/game/104/148/,34996,我是大将军,http://bcdn.andreader.com/Images/f415823f-b9f8-557e-ff0c-0f19d7295715/software.png?v=18:18:48GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/ee057092-6495-0e5b-996f-74bd2cfc5c64/software.png?v=16:19:28GMT+0800(中国标准时间))');" class="game_name"><p>大将军</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://zoo.qincaigame.com/game/104/148/,34996,我是大将军,http://bcdn.andreader.com/Images/f415823f-b9f8-557e-ff0c-0f19d7295715/software.png?v=18:18:48GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/ee057092-6495-0e5b-996f-74bd2cfc5c64/software.png?v=16:19:28GMT+0800(中国标准时间))');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://5wanpk.com:7035/h5game_1449,68996,我要当首富2,http://bcdn.andreader.com/Images/bb67f1ee-96f4-94a2-65eb-08915e61d5c2/software.png?v=下午2:30:36,http://bcdn.andreader.com/Images/c27465a3-db7e-820f-fef4-a98828858abc/software.png?v=下午2:30:41)');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/fuhao2.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://5wanpk.com:7035/h5game_1449,68996,我要当首富2,http://bcdn.andreader.com/Images/bb67f1ee-96f4-94a2-65eb-08915e61d5c2/software.png?v=下午2:30:36,http://bcdn.andreader.com/Images/c27465a3-db7e-820f-fef4-a98828858abc/software.png?v=下午2:30:41)');" class="game_name"><p>首富2</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://5wanpk.com:7035/h5game_1449,68996,我要当首富2,http://bcdn.andreader.com/Images/bb67f1ee-96f4-94a2-65eb-08915e61d5c2/software.png?v=下午2:30:36,http://bcdn.andreader.com/Images/c27465a3-db7e-820f-fef4-a98828858abc/software.png?v=下午2:30:41)');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/mhjwy.html,56996,新莽荒纪,http://bcdn.andreader.com/Images/1c7e5af0-1bee-efc0-17f1-eac0b6e45e9f/software.png?v=10:49:44GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/52ddc2e6-12f9-c900-2db9-3af5b2a077ca/software.png?v=10:49:48GMT+0800(中国标准时间))');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/manhuan.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/mhjwy.html,56996,新莽荒纪,http://bcdn.andreader.com/Images/1c7e5af0-1bee-efc0-17f1-eac0b6e45e9f/software.png?v=10:49:44GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/52ddc2e6-12f9-c900-2db9-3af5b2a077ca/software.png?v=10:49:48GMT+0800(中国标准时间))');" class="game_name"><p>新莽荒纪</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/mhjwy.html,56996,新莽荒纪,http://bcdn.andreader.com/Images/1c7e5af0-1bee-efc0-17f1-eac0b6e45e9f/software.png?v=10:49:44GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/52ddc2e6-12f9-c900-2db9-3af5b2a077ca/software.png?v=10:49:48GMT+0800(中国标准时间))');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://game.yyhplay.com/xbtx/index.html?xbtxChannelID=10020,63996,雄霸武神,http://bcdn.andreader.com/Images/c7f4bf0c-4ff7-ef1d-6b5c-93dd33668b76/software.png?v=下午6:16:06,http://bcdn.andreader.com/Images/8e7f7192-6c46-2a7b-70a9-672fc886d493/software.png?v=下午6:16:16)');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/sanguo.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://game.yyhplay.com/xbtx/index.html?xbtxChannelID=10020,63996,雄霸武神,http://bcdn.andreader.com/Images/c7f4bf0c-4ff7-ef1d-6b5c-93dd33668b76/software.png?v=下午6:16:06,http://bcdn.andreader.com/Images/8e7f7192-6c46-2a7b-70a9-672fc886d493/software.png?v=下午6:16:16)');" class="game_name"><p>雄霸武神</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://game.yyhplay.com/xbtx/index.html?xbtxChannelID=10020,63996,雄霸武神,http://bcdn.andreader.com/Images/c7f4bf0c-4ff7-ef1d-6b5c-93dd33668b76/software.png?v=下午6:16:06,http://bcdn.andreader.com/Images/8e7f7192-6c46-2a7b-70a9-672fc886d493/software.png?v=下午6:16:16)');" class="warp_game_href"></a>
+                    </li>
+                    <li>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://sdk.djsh5.com/changdu/login/?cHQMG8RUm0vrA,48996,妖怪宝可萌,http://bcdn.andreader.com/Images/3b769e6d-5d09-6d18-eae3-853e6e117959/software.png?v=10:56:35GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/a8937fa3-94e4-0fb5-d3b1-f3ff63c763df/software.png?v=10:56:39GMT+0800(中国标准时间))');" class="warp_game_img">
+                            <div class="game_border">
+                                <div class="border"></div>
+                                <img src="images/game/game/cat.png" alt="cat"/>
+                            </div>
+                        </a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://sdk.djsh5.com/changdu/login/?cHQMG8RUm0vrA,48996,妖怪宝可萌,http://bcdn.andreader.com/Images/3b769e6d-5d09-6d18-eae3-853e6e117959/software.png?v=10:56:35GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/a8937fa3-94e4-0fb5-d3b1-f3ff63c763df/software.png?v=10:56:39GMT+0800(中国标准时间))');" class="game_name"><p>宝可萌</p></a>
+                        <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://sdk.djsh5.com/changdu/login/?cHQMG8RUm0vrA,48996,妖怪宝可萌,http://bcdn.andreader.com/Images/3b769e6d-5d09-6d18-eae3-853e6e117959/software.png?v=10:56:35GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/a8937fa3-94e4-0fb5-d3b1-f3ff63c763df/software.png?v=10:56:39GMT+0800(中国标准时间))');" class="warp_game_href"></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
-    <script type="text/javascript">
-        $(function () {
-            function GetRequest() {
-                var url = location.search; //获取url中"?"符后的字串
-                var theRequest = new Object();
-                if (url.indexOf("?") != -1) {
-                    var str = url.substr(1);
-                    strs = str.split("&");
-                    for (var i = 0; i < strs.length; i++) {
-                        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
-                    }
-                }
-                return theRequest;
-            }
 
-            /*判断下载终端*/
-            var u = navigator.userAgent;
-            var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-            var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-            if(isiOS==true){
-                //$("#download").attr("href","https://lnk0.com/os48Eh");
-            }else if(isAndroid==true){
-                //$("#download").attr("href","http://download.andreader.com/download/changdu/Changdu_QQkaquan.apk");
-            }
+    <!--内容2-->
+    <div class="warp_content_all" id="white_bg_1">
+        <!--内容2-->
+        <div class="warp_content_1">
+            <div class="warp_title_all_1">
+                <div class="warp_content_2_title"></div>
+                <div class="warp_title_icon_2"></div>
+                <p>新手体验，拿礼券；</p>
+
+                <p>等级冲锋，一触即发</p>
+            </div>
+
+            <div class="warp_content_1_content">
+                <p class="warp_content_1_know">活动期间，首次体验规定游戏中的任意一款游戏并新建角色，且达到相对应的等级条件，即可获得相应奖励；体验多款游戏达到要求只可获取一款游戏奖励。</p>
+                <p class="warp_import"><img src="images/game/icon/money.png" alt=""/>（提示：点击游戏名称即可进入游戏哦~）</p>
+                <table border="0" align="center" cellspacing="0.5px" class="warp_content_1_table">
+                    <tr align="center" valign="middle" class="table_title">
+                        <th>游戏名称</th>
+                        <th>条件</th>
+                        <th>奖励</th>
+                        <th>条件</th>
+                        <th>奖励</th>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://d.hgame.com/hdpt/androidread/appid/100814/gameid/100220,1996,传奇世界,http://bcdn.andreader.com/Images/353a6bce-3fce-a580-8f7a-f9408bf22f48/software.png?v=18:45:17GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/1bb73b60-e75b-1bf3-f023-9b00706a996b/software.png?v=下午3:57:51)');"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '传奇世界']);">传奇世界</a></td>
+                        <td>50级</td>
+                        <td>68礼券</td>
+                        <td>100级</td>
+                        <td>188礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://sdk.djsh5.com/changdu/login/?cHQMG8RUm0vrA,48996,妖怪宝可萌,http://bcdn.andreader.com/Images/3b769e6d-5d09-6d18-eae3-853e6e117959/software.png?v=10:56:35GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/a8937fa3-94e4-0fb5-d3b1-f3ff63c763df/software.png?v=10:56:39GMT+0800(中国标准时间))');"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '妖怪宝可萌']);">妖怪宝可萌</a></td>
+                        <td>35级</td>
+                        <td>68礼券</td>
+                        <td>45级</td>
+                        <td>188礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://game.yyhplay.com/xbtx/index.html?xbtxChannelID=10020,63996,雄霸武神,http://bcdn.andreader.com/Images/c7f4bf0c-4ff7-ef1d-6b5c-93dd33668b76/software.png?v=下午6:16:06,http://bcdn.andreader.com/Images/8e7f7192-6c46-2a7b-70a9-672fc886d493/software.png?v=下午6:16:16)');"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '御天传奇']);">雄霸武神</a></td>
+                        <td>50级</td>
+                        <td>68礼券</td>
+                        <td>80级</td>
+                        <td>188礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://zoo.qincaigame.com/game/104/148/,34996,我是大将军,http://bcdn.andreader.com/Images/f415823f-b9f8-557e-ff0c-0f19d7295715/software.png?v=18:18:48GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/ee057092-6495-0e5b-996f-74bd2cfc5c64/software.png?v=16:19:28GMT+0800(中国标准时间))');"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '我是大将军']);">我是大将军</a></td>
+                        <td>30级</td>
+                        <td>68礼券</td>
+                        <td>40级</td>
+                        <td>188礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/jssgwy.html,17996,绝世神功,http://bcdn.andreader.com/Images/48c9190b-f4ba-7c7c-0a34-2786b947084c/software.png?v=17:17:07GMT+0800(中国标准时间),http://b.image.andreader.com/Images/81cf71bd-a5f2-c6a8-a2f8-76e333a6536b/software.png?v=16:48:40GMT+0800(中国标准时间))');"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '绝世神功']);">绝世神功</a></td>
+                        <td>50级</td>
+                        <td>68礼券</td>
+                        <td>75级</td>
+                        <td>188礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://5wanpk.com:7035/h5game_994,61996,风爆远征,http://bcdn.andreader.com/Images/e09ce794-fa14-30d3-6557-d27206a949f9/software.png?v=下午4:01:29,http://bcdn.andreader.com/Images/2d04c75d-f041-abd7-0bfd-0159ba5734d4/software.png?v=下午4:01:36)');"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '不服小天王']);">风爆远征</a></td>
+                        <td>50级</td>
+                        <td>68礼券</td>
+                        <td>100级</td>
+                        <td>188礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://h5w.menglegame.com/cqz/index_soeasy.html?channel=zmso&channelid=changdushucheng&zmcon=196ce76388024ff6e4d612c745fc9b15,64996,楚乔传H5,http://bcdn.andreader.com/Images/a5ef96fe-146b-f0b2-f590-78f4d917c8eb/software.png?v=下午4:31:17,http://bcdn.andreader.com/Images/c3395dca-ee8e-8c42-b905-df85f0490662/software.png?v=下午4:31:22)')"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '鹿鼎记']);">楚乔传</a></td>
+                        <td>40级</td>
+                        <td>68礼券</td>
+                        <td>50级</td>
+                        <td>188礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://g.api.uqee.com/rest/partner/hshushop/bfxtw/1030/enter,57996,不服小天王,http://bcdn.andreader.com/Images/958e79f8-0b62-3070-9462-536ed348f92e/software.png?v=下午2:19:03,http://bcdn.andreader.com/Images/158ca2cb-de59-1834-6df7-2ef8c7b5d10a/software.png?v=下午2:19:09)');"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '不服小天王']);">不服小天王</a></td>
+                        <td>250级</td>
+                        <td>68礼券</td>
+                        <td>500级</td>
+                        <td>188礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td>
+                            <a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://5wanpk.com:7035/h5game_1449,68996,我要当首富2,http://bcdn.andreader.com/Images/bb67f1ee-96f4-94a2-65eb-08915e61d5c2/software.png?v=下午2:30:36,http://bcdn.andreader.com/Images/c27465a3-db7e-820f-fef4-a98828858abc/software.png?v=下午2:30:41)');"
+                               onclick="_hmt.push(['_trackEvent', 'btn', '分享', '口袋妖怪联盟']);">口袋妖怪联盟</a></td>
+                        <td>35级</td>
+                        <td>68礼券</td>
+                        <td>60级</td>
+                        <td>188礼券</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--内容3-->
+    <div class="warp_content_all" id="warp_content_all_thrild">
+        <!--内容3-->
+        <div class="warp_content_1">
+            <div class="warp_title_all_1">
+                <div class="warp_content_3_title"></div>
+                <div class="warp_title_icon_3"></div>
+                <p>充值领礼券，多充多送！</p>
+
+                <p>达人先锋战，越战越勇！</p>
+            </div>
+
+            <div class="warp_content_1_content">
+                <p class="warp_content_1_know">活动期间，所有用户在游戏内参与充值，满足条件即可获得相应奖励，多充多得，奖励可重复获得。</p>
+
+                <p class="warp_import"><img src="images/game/icon/money.png" alt=""/>（提示：点击游戏名称即可进入游戏哦~）</p>
+                <table border="0" align="center" cellspacing="0.5px" class="warp_content_2_table">
+                    <tr align="center" valign="middle" class="table_title">
+                        <th>游戏名</th>
+                        <th>满足条件</th>
+                        <th>获取奖励</th>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://d.hgame.com/hdpt/androidread/appid/100814/gameid/100220,1996,传奇世界,http://bcdn.andreader.com/Images/353a6bce-3fce-a580-8f7a-f9408bf22f48/software.png?v=18:45:17GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/1bb73b60-e75b-1bf3-f023-9b00706a996b/software.png?v=下午3:57:51)');">传奇世界</a></td>
+                        <td>30元</td>
+                        <td>600礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://passa.gz.1251010508.clb.myqcloud.com/pass_a/jdk/play/2000034,7996,决战沙城,http://bcdn.andreader.com/Images/c82198b7-8db0-fa1b-b649-009a5170650d/software.png?v=17:17:35GMT+0800(中国标准时间),http://b.image.andreader.com/Images/18261ecd-8d65-0622-0050-40ab804d944a/software.png?v=上午10:08:41)');">决战沙城</a></td>
+                        <td>50元</td>
+                        <td>1000礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://h5w.menglegame.com/cqz/index_soeasy.html?channel=zmso&channelid=changdushucheng&zmcon=196ce76388024ff6e4d612c745fc9b15,64996,楚乔传H5,http://bcdn.andreader.com/Images/a5ef96fe-146b-f0b2-f590-78f4d917c8eb/software.png?v=下午4:31:17,http://bcdn.andreader.com/Images/c3395dca-ee8e-8c42-b905-df85f0490662/software.png?v=下午4:31:22)');">楚乔传</a></td>
+                        <td>10元</td>
+                        <td>200礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://sdk.djsh5.com/changdu/login/?cHQMG8RUm0vrA,48996,妖怪宝可萌,http://bcdn.andreader.com/Images/3b769e6d-5d09-6d18-eae3-853e6e117959/software.png?v=10:56:35GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/a8937fa3-94e4-0fb5-d3b1-f3ff63c763df/software.png?v=10:56:39GMT+0800(中国标准时间))');">妖怪宝可萌</a></td>
+                        <td>30元</td>
+                        <td>600礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/jssgwy.html,17996,绝世神功,http://bcdn.andreader.com/Images/48c9190b-f4ba-7c7c-0a34-2786b947084c/software.png?v=17:17:07GMT+0800(中国标准时间),http://b.image.andreader.com/Images/81cf71bd-a5f2-c6a8-a2f8-76e333a6536b/software.png?v=16:48:40GMT+0800(中国标准时间))');">绝世神功</a></td>
+                        <td>30元</td>
+                        <td>600礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://m.9g.com/andreader/mhjwy.html,56996,新莽荒纪,http://bcdn.andreader.com/Images/1c7e5af0-1bee-efc0-17f1-eac0b6e45e9f/software.png?v=10:49:44GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/52ddc2e6-12f9-c900-2db9-3af5b2a077ca/software.png?v=10:49:48GMT+0800(中国标准时间))');">新莽荒纪</a></td>
+                        <td>50元</td>
+                        <td>1000礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://game.yyhplay.com/xbtx/index.html?xbtxChannelID=10020,63996,雄霸武神,http://bcdn.andreader.com/Images/c7f4bf0c-4ff7-ef1d-6b5c-93dd33668b76/software.png?v=下午6:16:06,http://bcdn.andreader.com/Images/8e7f7192-6c46-2a7b-70a9-672fc886d493/software.png?v=下午6:16:16)');">雄霸武神</a></td>
+                        <td>28元</td>
+                        <td>600礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://5wanpk.com:7035/h5game_1449,68996,我要当首富2,http://bcdn.andreader.com/Images/bb67f1ee-96f4-94a2-65eb-08915e61d5c2/software.png?v=下午2:30:36,http://bcdn.andreader.com/Images/c27465a3-db7e-820f-fef4-a98828858abc/software.png?v=下午2:30:41)');">我要当首富2</a></td>
+                        <td>10元</td>
+                        <td>200礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://h5sdk.playtai.com:8080/h5distribute/bridge/changdushucheng/login/wdzz,62996,武道至尊,http://bcdn.andreader.com/Images/fe945198-5938-81f0-7f38-eddac1808964/software.png?v=下午5:05:29,http://bcdn.andreader.com/Images/fc53f4f8-fa18-7378-26e6-61f5ad554a0c/software.png?v=下午5:08:11)');">武道至尊</a></td>
+                        <td>20元</td>
+                        <td>400礼券</td>
+                    </tr>
+                    <tr align="left">
+                        <td><a href="javascript:JumpLink('ndaction:jumpwebgame(0,http://api.egret-labs.org/v2/game/22182/91284,54996,三生三世十里桃花,http://bcdn.andreader.com/Images/8b6c259f-dfd8-0fc1-f1db-006b5eb5718c/software.png?v=11:36:23GMT+0800(中国标准时间),http://bcdn.andreader.com/Images/7356cbab-fdbe-0a18-4879-03a4c873a55b/software.png?v=11:36:31GMT+0800(中国标准时间))');">三生三世</a></td>
+                        <td>50元</td>
+                        <td>1000礼券</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 
 
-            $("#item3").on("click", function () {
-                var phone = $("#phone").val();
-                var check = $("#check").val();
-                var reg = /^1[34578]\d{9}$/;
-                var reg1 = /^\d*$/;
-                if (phone.trim() == "") {
-                    $('#tip').text('请输入手机号码').show()
-                } else if (reg.test(phone) == false) {
-                    $('#tip').text("请输入手机号码正确格式").show();
-                } else if (check == "") {
-                    $('#tip').text('请输入获取验证').show();
-                } else if (reg1.test(check) == false) {
-                    $('#tip').text('请输入获取验证正确格式').show();
-                } else {
-                    var request = GetRequest();
-                    var card_id = request["card_id"];
-                    var card_code = request["code"];
+    <!--内容4-->
+    <div class="warp_content_all" id="white_bg_2">
+        <div class="warp_content_1">
+            <div class="warp_title_all_1">
+                <div class="warp_content_4_title"></div>
+                <div class="warp_title_icon_4"></div>
+                <p>福利大反馈，幸运大抽奖！</p>
+                <p>人品大比拼，奖品大升级！</p>
+                <p>快来拼手气吧！</p>
+            </div>
 
-                    //如果获取的验证码正确
+            <div class="warp_content_1_content">
+                <p class="warp_content_1_know">活动期间，每位用户每日获得一次免费抽奖机会，任一款游戏累计充值达50元，即可获得一次抽奖的机会。<b class="warp_import">冷暖两用空调扇、蓝牙桌面音响、智能体感平衡车、iPhone 7 Plus等大奖等你来拿！</b></p>
 
-                    $("#wait").show();          //提示等待
+                <div class="box" id="box">
+                    <img src="images/game/zhuangpan_1.png" class="img01" alt="">
 
-                    window.location.href="index_success.html";       //跳转其他页面
+                    <button id="drawBtn" class="drawBtn takeMove"
+                            onclick="_hmt.push(['_trackEvent', 'btn', '抽奖', '游戏中心6月天降大礼']);"></button>
 
-                }
-            });
-            /*获取验证码检测*/
-            $("#btn1").on("click", function () {
-                var phone = $("#phone").val();
-                var check = $("#check").val();
-                var reg = /^1[34578]\d{9}$/;
-                if (phone.trim() == "") {
-                    $('#tip').text('请输入手机号码').show();
-                } else if (reg.test(phone) == false) {
-                    $('#tip').text("请输入手机号码正确格式").show();
-                } else {
-                    /*正确的情况下更改按钮字体和样式*/
-                    $(this).css({
-                        "backgroundColor":"#bfbfbf"
-                    });
+                    <div class="warp_prompt" id="warp_prompt">
+                        <p id="warp_prompt_content"></p>
+                    </div>
+                </div>
 
-                    //调用秒数
-                    settime();
+                <div class="warp_us">
+                    <div class="lastNumber" id="lastNumber">
+                        剩余<b id="lastNumber_content"></b>次
+                    </div>
 
-                    $('#tip').hide();
-                }
-            });
+                    <div class="index_loading" id="mooc">
+                        <div id="moocBox">
+                            <ul id="con1">
+                            </ul>
+                            <ul id="con2"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            var countdown = 30;
-            var myInterval;
-            var btn_time = $("#btn1");
-            function settime() {
-                if (countdown == 0) {
-                    clearInterval(myInterval);
-                    btn_time.removeAttr("disabled");
-                    btn_time.text("获取验证码");
-                    btn_time.css({
-                        "backgroundColor":"#0f8bff"
-                    });
+    <!--内容5-->
+    <div class="warp_content_all" id="footer_rule">
+        <div class="warp_content_1">
+            <div class="warp_content_1_content">
+                <h2 class="title">活动说明：</h2>
+                <ul class="footer_said">
+                    <li><span class="number">1.</span>礼券有效期为自发放起7天，过期后系统将自动作废，不予补发；</li>
+                    <li><span class="number">2.</span>“登录有奖区”奖励于活动结束后即时到账，优惠券有效期3日；</li>
+                    <li><span class="number">3.</span>“等级冲锋区”奖励于活动结束后的10个工作日内发放到账，本次活动仅限活动时间内首次达标的新用户有效，体验多款游戏达到要求只可领取一款游戏奖励；</li>
+                    <li><span class="number">4.</span>“达人先锋区”礼券奖励于活动结束后的7个工作日内陆续发放到账；</li>
+                    <li><span class="number">5.</span>“幸运大抽奖”当日抽奖次数将在第二日的0点清零，请于当日内尽快使用；</li>
+                    <li><span class="number">6.</span>活动相关的实物奖品将在活动结束后的10个工作日内进行发放（客服会主动联系中奖用户并核实个人信息）。</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-                    countdown = 30;
-                } else {
-                    btn_time.attr("disabled", "disabled");
-                    btn_time.text("重新发送(" + countdown + ")");
-                    countdown--;
-                    myInterval = setTimeout(function(){
-                        settime();
-                    },1000)
-                }
-            }
-        });
-    </script>
+    <div class="warp_tell">
+        <p id="warp_tell_content">最终解释权归<b id="warp_tell_take"></b>所有</p>
+    </div>
+</div>
+
+<!--遮盖层-->
+<div id="mask" class="mask" style=""></div>
+
+<!--转盘插件-->
+<script type="text/javascript" src="lib/rotaryDraw.js" charset="gbk"></script>
+<!--ajax-->
+<script type="text/javascript" src="script/base.js" charset="gbk"></script>
+<!--md5加密-->
+<script src="lib/Mod5.js"></script>
+<!--统计的js引入，统计畅读和安卓-->
+<script type="text/javascript" src="script/cdu_tongji.js"></script>
+<!---->
+
+<!--字幕条滚动-->
+<script type="text/javascript">
+    var moocBox = document.getElementById('moocBox');
+    var con1 = document.getElementById('con1');
+    var con2 = document.getElementById('con2');
+    var speed = 60;
+    moocBox.scrollTop = 0;
+    var myScroll;
+    con2.innerHTML = con1.innerHTML;
+    function scrollUp() {
+        if (moocBox.scrollTop >= con1.scrollHeight) {
+            moocBox.scrollTop = 0;
+        } else {
+            moocBox.scrollTop++;
+        }
+    }
+    myScroll = setInterval(function () {
+        scrollUp();
+    }, speed);
+</script>
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -26,277 +26,693 @@ $devicePixelRatio:3;
 
 
 ::-webkit-input-placeholder { /* WebKit browsers */
-  color: #bec0c2;
-  font-size: rem(45);
+    color: #51cdb0;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color: #bec0c2;
-  font-size: rem(45);
+    color: #51cdb0;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color: #bec0c2;
-  font-size: rem(45);
+    color: #51cdb0;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
-  font-size: rem(45);
-  color: #bec0c2;
+    color: #51cdb0;
 }
-
-/*滚动条样式*/
-::-webkit-scrollbar {
-    width: rem(20);
-    height: rem(5);
-}
-::-webkit-scrollbar-track {
-    display: block;
-}
-::-webkit-scrollbar-thumb
-{
-    background-color: #d7d9db;
-    border-radius: 10px;
-}
-
-
 
 /*遮盖层样式*/
 #mask {
     width: 100%;
     min-height: 100%;
-    background-color:#000000;
+    background-color:#4b4b4c;
     position:absolute;
     top:0;
     left:0;
-    z-index:50;
-    opacity:0.5;
+    z-index:300;
+    opacity:0.4;
     /*兼容IE8及以下版本浏览器*/
-    filter: alpha(opacity=50);
-    /*display: none;*/
+    filter: alpha(opacity=40);
+    display:none;
 }
-
-/*请稍后样式*/
-#wait {
-  width: rem(366);
-  height: rem(302);
-  background-color: rgba(0,0,0,0.7);
-  border-radius: 8px;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  margin-left: rem(-182);
-  margin-top: rem(-420);
-  display: none;
-
-  .loading {
-    width: rem(94);
-    height: rem(96);
-    display: block;
-    margin: rem(52) auto rem(30);
-  }
-  h2 {
-    color: #FFFFFF;
-    font-size: rem(52);
-    text-align: center;
-    font-weight: normal;
-  }
-}
-
-
 
 html {
     width: 100%;
     height: 100%;
 }
 body {
+    position: relative;
     width: 100%;
-    height: 100%;
+    overflow-x: hidden;
 }
 .wrap {
-  width: 100%;
-  height: rem(1920);
-  position: relative;
-  background-color: #FFFFFF;
+/*    width: 100%;
+    height: 100%;
+    position: relative;*/
+    width: 100%;
 
-  /*注册页面*/
-  .content {
-      width: rem(920);
-      margin: 0 auto;
-      overflow: hidden;
+    .warp_import {
+        color: #ffffff;
 
-      .content_title {
-        width: rem(244);
-        height: rem(342);
-        @include backgroundSet(logo,png);
-        margin: rem(96) auto rem(106);
-      }
+        img {
+            width: rem(42);
+            height: rem(46);
+            display: inline-block;
+            vertical-align: middle;
+        }
+    }
 
-      .content_item_number {
-        position: relative;
+    .warp_header {
         width: 100%;
-
-        .item_iphone {
-          position: absolute;
-          top: rem(20);
-          left: rem(10);
-          @include backgroundSet(iphone,png);
-          width: rem(42);
-          height: rem(50);
-          z-index: 200;
-          background-size: 100% 100%;
-        }
-
-        input {
-          height: rem(100);
-          width: 100%;
-          color: #333333;
-          border: none;
-          border-bottom: 2px solid #e9e8e8;
-          outline: none;
-          font-size: rem(54);
-          text-align: left;
-          padding-left: rem(90);
-          margin-bottom: rem(50);
-          z-index: 0;
-        }
-      }
-
-      .content_item_check {
+        height: rem(1169);
+        background: url("../images/game/headerbg_4.jpg") center no-repeat;
+        background-size: 100% 100%;
+        display: block;
         position: relative;
+
+        a {
+            color: #FFFFFF;
+            display: inline-block;
+            width: rem(190);
+            height: rem(100);
+            line-height: rem(100);
+            text-align: center;
+            background-color: #d01e24;
+            border-radius: 0 8px 8px 0;
+            position: absolute;
+            top: rem(58);
+            font-size: rem(42);
+        }
+        .take_left {
+            left: 0;
+        }
+        .take_right {
+            right: 0;
+            border-radius: 8px 0 0 8px;
+        }
+
+        /*横向字幕条滚动*/
+        .warp_header_news {
+            width: 100%;
+            height: rem(83);
+            line-height: rem(83);
+            position: absolute;
+            bottom: rem(130);
+            color: #FFFFFF;
+            background: url("../images/game/news_bg.png") center no-repeat;
+            background-size: 100% 100%;
+            text-align: center;
+
+            #title_moocBox {
+                width: rem(966);
+                height: rem(83);
+                line-height: rem(83);
+                margin: 0 auto;
+                overflow: hidden;
+
+                #title_con1 {
+                    width: rem(966);
+                    display: inline-block;
+                    height: rem(83);
+                    font-size: rem(36);
+                    p {
+                        display: inline-block;
+                        margin-left: rem(60);
+                        font-size: rem(36);
+                    }
+                }
+                #title_con2 {
+                    width: rem(10000);
+                    display: inline-block;
+                    height: rem(83);
+                    li {
+                        float: left;
+                        font-size: rem(36);
+                    }
+                }
+            }
+
+        }
+}
+
+    /*页面小背景*/
+    .blue_bg,.red_bg {
+        width: rem(138);
+        height: rem(165);
+        position: absolute;
+        z-index: 100;
+    }
+    .blue_bg {
+        width: rem(90);
+        height: rem(132);
+        background: url("../images/game/icon/blue_bg.png") center no-repeat;
+        background-size: 100% 100%;
+        top: rem(1300);
+        left: 0;
+    }
+    .red_bg {
+        width: rem(138);
+        height: rem(165);
+        position: absolute;
+        z-index: 300;
+        background: url("../images/game/icon/red_bg.png") center no-repeat;
+        background-size: 100% 100%;
+        bottom: rem(2360);
+        right: 0;
+    }
+
+    /*content_ul*/
+    .warp_ul {
+        width: rem(934);
+        height: rem(650);
+        background-color: #fbd237;
+        margin: rem(100) auto rem(30);
+        border: 1px solid #fabf0a;
+        border-radius: 5px;
+        overflow: hidden;
+
+        .content_title {
+            width: rem(676);
+            height: rem(74);
+            background: url("../images/game/content_title.png") center no-repeat;
+            background-size: 100% 100%;
+            margin: rem(30) auto 0;
+        }
+
+        ul {
+            li {
+                width: rem(360);
+                height: rem(220);
+                display: inline-block;
+                vertical-align: middle;
+                margin: rem(38) 0 0 rem(70);
+
+                &:first-child{
+                    width: rem(410);
+                }
+
+                &:nth-child(3){
+                    width: rem(410);
+                }
+
+                &:nth-child(2n+0){
+                    margin-left: rem(0);
+                    width: rem(380);
+                }
+                img {
+                    display: block;
+                    height: rem(109);
+                    margin: 0 auto rem(10);
+                }
+                h3 {
+                    color: #FFFFFF;
+                    font-size: rem(40);
+                    text-align: center;
+                }
+                p {
+                    text-align: center;
+                    font-size: rem(36);
+                    color: #847f7c;
+                }
+            }
+        }
+    }
+
+    .warp_content_all {
         width: 100%;
+        padding: rem(64) 0 rem(80) 0;
+        background-color: #d02126;
 
-        .item_checktest {
-          position: absolute;
-          top: rem(20);
-          left: rem(10);
-          @include backgroundSet(check,png);
-          width: rem(50);
-          height: rem(42);
-          z-index: 200;
-          background-size: 100% 100%;
+        &:nth-child(2n+0){
+        }
+        .warp_content_1 {
+            width: rem(946);
+            border-radius: 5px;
+            margin: 0 auto 0;
+            padding-bottom: rem(40);
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+            /*标题背景图片*/
+            .warp_title_all_1 {
+                .warp_content_1_title {
+                    background: url("../images/game/title_1.png") center no-repeat;
+                    background-size: 100% 100%;
+                    width: rem(408);
+                    height: rem(112);
+                    margin: 0 0 rem(50) rem(0);
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .warp_content_2_title {
+                    background: url("../images/game/title_2.png") center no-repeat;
+                    background-size: 100% 100%;
+                    width: rem(436);
+                    height: rem(118);
+                    margin: 0 0 rem(50) rem(0);
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .warp_content_3_title {
+                    background: url("../images/game/title_3.png") center no-repeat;
+                    background-size: 100% 100%;
+                    width: rem(444);
+                    height: rem(118);
+                    margin: 0 0 rem(50) rem(0);
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .warp_content_4_title {
+                    background: url("../images/game/title_4.png") center no-repeat;
+                    background-size: 100% 100%;
+                    width: rem(444);
+                    height: rem(118);
+                    margin: 0 0 rem(50) rem(0);
+                    display: inline-block;
+                    vertical-align: top;
+                }
+                .warp_title_icon_1 {
+                    background: url("../images/game/icon/icon.png") center no-repeat;
+                    background-size: 100% 100%;
+                    width: rem(376);
+                    height: rem(263);
+                    display: inline-block;
+                    vertical-align: top;
+                    float: right;
+                }
+                .warp_title_icon_2 {
+                    background: url("../images/game/icon/deg.png") center no-repeat;
+                    background-size: 100% 100%;
+                    width: rem(360);
+                    height: rem(250);
+                    display: inline-block;
+                    vertical-align: top;
+                    float: right;
+                    margin-right: rem(10);
+                }
+                .warp_title_icon_3 {
+                    background: url("../images/game/icon/dun.png") center no-repeat;
+                    background-size: 100% 100%;
+                    width: rem(258);
+                    height: rem(304);
+                    display: inline-block;
+                    vertical-align: top;
+                    float: right;
+                }
+                .warp_title_icon_4 {
+                    background: url("../images/game/icon/cat.png") center no-repeat;
+                    background-size: 100% 100%;
+                    width: rem(297);
+                    height: rem(328);
+                    display: inline-block;
+                    vertical-align: top;
+                    float: right;
+                    margin-right: rem(100);
+                }
+                p {
+                    font-size: rem(38);
+                    color: #FFFFFF;
+                    margin: 0 0 rem(10) rem(10);
+                    font-weight: bold;
+                }
+            }
+
+            .warp_content_1_content {
+                width: rem(966);
+                margin: 0 auto 0;
+
+                .warp_content_1_know {
+                    display: block;
+                    width: rem(940);
+                    color: #ffd870;
+                    font-size: rem(38);
+                    margin-top: rem(30);
+                    line-height: rem(58);
+                }
+
+                .warp_import {
+                    font-size: rem(38);
+                    font-weight: normal;
+                }
+
+                /*列表*/
+                .warp_start_game {
+                    margin-bottom: rem(56);
+                    li {
+                        display: inline-block;
+                        width: rem(154);
+                        text-align: center;
+                        margin-right: rem(10);
+                        margin-top: rem(60);
+                        &:nth-child(5n+0){
+                            margin-right: 0;
+                        }
+
+                        .warp_game_img {
+                            display: block;
+                            margin: 0 auto;
+                            width: rem(154);
+                            height: rem(154);
+                            .game_border {
+                                width: rem(154);
+                                height: rem(154);
+                                position: relative;
+
+                                .border {
+                                    position: absolute;
+                                    width: rem(154);
+                                    height: rem(150);
+                                    background: url("../images/game/border.png") center no-repeat;
+                                    background-size: 100% 100%;
+                                    z-index: 300;
+                                }
+                                img {
+                                    width: rem(150);
+                                    height: rem(140);
+                                    background-size: 100% 100%;
+                                    position: absolute;
+                                    top: 1px;
+                                    left: 1px;
+                                    z-index: 0;
+                                    border-radius: 5px;
+                                }
+                            }
+                        }
+                        .game_name {
+                            margin: 0 auto;
+                            p {
+                                display: block;
+                                width: 100%;
+                                color: #FFFFFF;
+                                font-size: rem(36);
+                                line-height: rem(50);
+                                margin-bottom: rem(10);
+                                white-space: nowrap;
+                                word-wrap: normal;
+                                word-break: normal;
+                                text-overflow: ellipsis;
+                                -o-text-overflow: ellipsis;
+                                overflow: hidden;
+                            }
+                        }
+                        .warp_game_href {
+                            display: block;
+                            width: rem(140);
+                            height: rem(60);
+                            background: url("../images/game/icon/start.png") no-repeat;
+                            background-size: 100% 100%;
+                            color: #000000;
+                            margin: 0 auto;
+                        }
+                    }
+                }
+
+                /*表格*/
+                .warp_content_1_table {
+                    width: 100%;
+                    height: rem(752);
+                    margin: rem(48) auto rem(44);
+                    border: 1px solid #f8f8f8;
+                    font-size: rem(36);
+                    tr {
+                        th,td {
+                            border: 1px solid #f8f8f8;
+                        }
+                        th {
+                            color: #FFFFFF;
+                            font-size: rem(38);
+                            background-color: #d01d23;
+                            font-weight: bold;
+                            height: rem(80);
+                            line-height: rem(80);
+                        }
+                        td {
+                            background-color: #fae0e0;
+                            color: #66462d;
+                            text-align: center;
+                            height: rem(80);
+                            a {
+                                color: #3a0a08;
+                                font-weight: bold;
+                            }
+                            p {
+                                color: #df8300;
+                            }
+                        }
+                    }
+                }
+
+                .warp_content_2_table {
+                    width: 100%;
+                    height: rem(752);
+                    margin: rem(48) auto rem(44);
+                    border: 1px solid #d01d23;
+                    font-size: rem(36);
+                    tr {
+                        th,td {
+                            border: 1px solid #d01d23;
+                        }
+                        th {
+                            color: #3a0a08;
+                            font-size: rem(38);
+                            background-color: #f7a729;
+                            font-weight: bold;
+                            height: rem(80);
+                            line-height: rem(80);
+                        }
+                        td {
+                            background-color: #f8f8f8;
+                            color: #66462d;
+                            text-align: center;
+                            height: rem(80);
+                            a {
+                                color: #3a0a08;
+                                font-weight: bold;
+                            }
+                            p {
+                                color: #df8300;
+                            }
+                        }
+                    }
+                }
+
+                /*转盘*/
+                .box {
+                    position:relative;
+                    margin:rem(24) auto 0;
+                    width: rem(966);
+                    .img01 {
+                        width: rem(966);
+                        height: rem(966);
+                    }
+                    .takeMove {
+                        width: rem(296);
+                        height: rem(300);
+                        position:absolute;
+                        left: rem((966/2)-(296/2));
+                        top: rem((966/2)-(300/2));
+                        background: url("../images/game/img_06.png")center no-repeat;
+                        background-size: cover;
+                        border: none;
+                        outline: none;
+                    }
+/*                    .takeMove {
+                        width: rem(296);
+                        height: rem(300);
+                        position:absolute;
+                        left: rem((966/2)-(296/2));
+                        top: rem((966/2)-(300/2));
+                    }*/
+
+                    #warp_prompt {
+                        width: rem(520);
+                        height: rem(310);
+                        background: url("../images/game/warp_prompt.png") center no-repeat;
+                        position: absolute;
+                        background-size: 100% 100%;
+                        top: 50%;
+                        margin-top: rem(-80);
+                        left: 50%;
+                        margin-left: rem(-260);
+                        z-index: 600;
+                        text-align: center;
+                        display: none;
+
+                        #warp_prompt_content {
+                            width: rem(448);
+                            height: auto;
+                            margin: rem(90) auto 0;
+                            font-size: rem(50);
+                        }
+                    }
+                }
+
+                .warp_us {
+                    #lastNumber {
+                        display: inline-block;
+                        vertical-align: middle;
+                        color: #FFFFFF;
+                        width: rem(262);
+                        height: rem(120);
+                        background-color: #d11e24;
+                        border-radius: 10px;
+                        font-size: rem(50);
+                        text-align: center;
+                        line-height: rem(120);
+
+                        #lastNumber_content {
+                            font-weight: normal;
+                            color: #fab414;
+                        }
+                    }
+
+                    /*字幕条滚动_2*/
+                    #mooc {
+                        display: inline-block;
+                        vertical-align: middle;
+                        width: rem(630);
+                        margin: rem(44) 0 rem(44) rem(30);
+                        height: rem(120);
+                        padding-top: rem(20);
+                        background-color: rgba(252,250,241,0.8);
+                        #moocBox {
+                            width: rem(600);
+                            height: rem(100);
+                            margin: 0 auto;
+                            overflow: hidden;
+                        }
+
+                        #con1 {
+                            margin: 0;
+                            text-align: center;
+                            li {
+                                margin: 0;
+                                width: 100%;
+                                font-size: rem(36);
+                                color: #6b4d28;
+                                overflow: hidden;
+                            }
+                        }
+                        #con2 {
+                            text-align: center;
+                            margin: 0;
+                            li {
+                                overflow: hidden;
+                                margin: 0;
+                                width: 100%;
+                                font-size: rem(36);
+                                color: #f6ff00;
+                            }
+                        }
+                    }
+                }
+
+
+                /*内容的底部样式*/
+                .warp_content_1_footer {
+                    width: 100%;
+                    color: #f17649;
+                    font-size: rem(52);
+                    font-weight: bold;
+
+                    p {
+                        display: inline-block;
+                        font-family: HYWBJ_1;
+                    }
+                    .footer_1 {
+                        margin-left: rem(60);
+                    }
+                    .footer_2 {
+                        margin-left: rem(340);
+                    }
+                }
+
+
+                /*活动说明:*/
+                .title {
+                    display: inline-block;
+                    margin: rem(0) 0 rem(30) 0;
+                    color: #FFFFFF;
+                    font-size: rem(56);
+                    font-weight: bold;
+                }
+                .footer_said {
+                    li {
+                        color: #ffd870;
+                        width: 100%;
+                        text-align: left;
+                        margin: rem(20) 0 0 0;
+                        font-size: rem(38);
+                        line-height: rem(70);
+                        &:first-child {
+                            margin: 0;
+                        }
+
+                        .number {
+                            font-size: rem(36);
+                            display: inline-block;
+                            width: rem(32);
+                            height: rem(42);
+                            line-height: rem(42);
+                            text-align: center;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    #warp_content_first {
+        padding-top: 0;
+        padding-bottom: rem(20);
+    }
+
+    #warp_content_all_thrild {
+        padding-top: rem(60);
+    }
+
+
+
+    #white_bg_1,#white_bg_2 {
+        background: url("../images/game/white_bg1.png") center no-repeat;
+        background-size: 100% 100%;
+        background-color: #d11e24;
+
+        .warp_content_1 .warp_title_all_1 p {
+            color: #d01d21;
         }
 
-        input {
-          height: rem(100);
-          width: 100%;
-          color: #333333;
-          border: none;
-          border-bottom: 2px solid #e9e8e8;
-          outline: none;
-          font-size: rem(54);
-          text-align: left;
-          padding-left: rem(90);
-          margin-bottom: rem(20);
-          z-index: 0;
+        .warp_import {
+            color: #d01d21;
         }
 
-        .btn1 {
-          position: absolute;
-          top: 0;
-          right: 0;
-          background-color: #0f8bff;
-          color: #FFFFFF;
-          font-size: rem(36);
-          width: rem(296);
-          height: rem(86);
-          border: none;
-          border-radius: 5px;
-          outline: none;
-          text-align: center;
-          line-height: rem(86);
+        .warp_content_1_know {
+            color: #6b4d28;
         }
+    }
 
-        /*信息提醒*/
-        .content_tip {
-          position: absolute;
-          top: rem(120);
-          right: 0;
-          text-align: right;
-          #tip {
-            font-size: rem(36);
-            color: #fa622e;
-          }
-        }
+    #white_bg_2 {
+        padding-top: rem(70);
+        padding-bottom: rem(80);
+    }
 
-      }
+    #footer_rule {
+        padding-top: rem(10);
+    }
 
-    .item {
-        margin-top: rem(148);
+
+    /*最底部*/
+    .warp_tell {
+        width: 100%;
+        height: rem(68);
+        line-height: rem(68);
+        background-color: #2d271d;
         text-align: center;
-        button {
-          width: 100%;
-          height: rem(138);
-          background-color: #0f8bff;
-          border: none;
-          border-radius: 10px;
-          font-size: rem(63);
-          color: #fff;
-          outline: none;
-        }
-        .p1 {
-          margin-top: rem(40);
-          font-size: rem(46);
-          color: #0f8bff;
-        }
-      }
-
-    /*footer*/
-    .footer {
-      width: 100%;
-      position: absolute;
-      left: 0;
-      bottom: rem(40);
-      .p2 {
-        width: rem(920);
-        margin: 0 auto;
+        color: #ffffff;
         font-size: rem(36);
-        color: #b5b5b6;
-      }
-    }
+        font-weight: bold;
     }
 }
-
-
-.wrap_bind {
-  width: 100%;
-  height: 100%;
-  /*手机绑定页面*/
-  .content_bind {
-    width: rem(920);
-    margin: 0 auto;
-    overflow: hidden;
-
-    .contetn_success {
-      width: rem(378);
-      height: rem(442);
-      @include backgroundSet(iphone_bg,png);
-      background-size: 100% 100%;
-      margin: rem(135) auto rem(68);
-    }
-    .contetn_success_title {
-      color: #0f8bff;
-      font-size: rem(69);
-      text-align: center;
-    }
-    .contetn_success_app {
-      margin-top: rem(36);
-      text-align: center;
-      color: #999999;
-      font-size: rem(42);
-    }
-
-    .content_close {
-      margin-top: rem(160);
-      width: 100%;
-      height: rem(140);
-      background-color: #0f8bff;
-      color: #FFFFFF;
-      font-size: rem(60);
-      outline: none;
-      border: none;
-      border-radius: 5px;
-    }
-  }
-}
-
 
 
 
